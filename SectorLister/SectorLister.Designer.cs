@@ -171,6 +171,7 @@
             this.Controls.Add(this.lblStart);
             this.Controls.Add(this.txtSectorName);
             this.Controls.Add(this.lblSectorName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SectorLister";
             this.Text = "Sector Lister 1v1";
             this.Load += new System.EventHandler(this.Form1_Load);
