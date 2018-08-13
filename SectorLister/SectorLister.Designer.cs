@@ -172,7 +172,7 @@
             this.Controls.Add(this.txtSectorName);
             this.Controls.Add(this.lblSectorName);
             this.Name = "SectorLister";
-            this.Text = "Sector Lister 1v0";
+            this.Text = "Sector Lister 1v1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.updnStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updnEnd)).EndInit();
