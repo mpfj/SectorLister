@@ -42,5 +42,17 @@ namespace SectorLister
                 }
             }
         }
+
+        private void btnOutputDir_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog dlg = new FolderBrowserDialog();
+            dlg.Description = "Select where to save \"ImportedStars.txt\" file";
+            dlg.SelectedPath = txtOutputDir.Text;
+            DialogResult res = dlg.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                txtOutputDir.Text = dlg.SelectedPath;
+            }
+        }
     }
 }

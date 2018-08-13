@@ -146,6 +146,7 @@
             this.btnOutputDir.TabIndex = 10;
             this.btnOutputDir.Text = "...";
             this.btnOutputDir.UseVisualStyleBackColor = true;
+            this.btnOutputDir.Click += new System.EventHandler(this.btnOutputDir_Click);
             // 
             // progressBar
             // 
