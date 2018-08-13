@@ -26,7 +26,7 @@ namespace SectorLister
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             String filename = txtOutputDir.Text + "\\ImportStars.txt";
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(filename))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(filename, chkAppend.Checked))
             {
                 int start = Decimal.ToInt32(updnStart.Value);
                 int end = Decimal.ToInt32(updnEnd.Value);

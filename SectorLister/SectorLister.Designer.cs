@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnOutputDir = new System.Windows.Forms.Button();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.chkAppend = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.updnStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.updnEnd)).BeginInit();
             this.SuspendLayout();
@@ -119,7 +120,7 @@
             // btnGenerate
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(12, 116);
+            this.btnGenerate.Location = new System.Drawing.Point(12, 139);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(264, 47);
             this.btnGenerate.TabIndex = 8;
@@ -150,16 +151,28 @@
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 169);
+            this.progressBar.Location = new System.Drawing.Point(12, 192);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(264, 10);
             this.progressBar.TabIndex = 11;
+            // 
+            // chkAppend
+            // 
+            this.chkAppend.AutoSize = true;
+            this.chkAppend.Location = new System.Drawing.Point(24, 116);
+            this.chkAppend.Name = "chkAppend";
+            this.chkAppend.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.chkAppend.Size = new System.Drawing.Size(91, 17);
+            this.chkAppend.TabIndex = 12;
+            this.chkAppend.Text = "Append to file";
+            this.chkAppend.UseVisualStyleBackColor = true;
             // 
             // SectorLister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 188);
+            this.ClientSize = new System.Drawing.Size(291, 214);
+            this.Controls.Add(this.chkAppend);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.btnOutputDir);
             this.Controls.Add(this.label1);
@@ -173,7 +186,7 @@
             this.Controls.Add(this.lblSectorName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "SectorLister";
-            this.Text = "Sector Lister 1v1";
+            this.Text = "Sector Lister 1v2";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.updnStart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.updnEnd)).EndInit();
@@ -195,6 +208,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnOutputDir;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.CheckBox chkAppend;
     }
 }
 
