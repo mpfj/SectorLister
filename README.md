@@ -33,7 +33,9 @@ Useful when strip-mining or strip-hunting a sub-sector and you want to remove sy
 1. Click "Generate"
 1. [jump to 8 above]
 
-**Warning** : isolating a 'D' sector with parents, children and neighbours will generate a list of 249 sectors.
+## *** Warning *** ##
+
+Isolating a 'D' sector with parents, children and neighbours will generate a list of 249 sectors.
 If you set each of these to have (say) 15000 systems, you'll end up with ~3.7 million systems the game needs to import.
 
 **This will take about 17 hours to import !!**
