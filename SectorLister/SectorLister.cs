@@ -62,15 +62,27 @@ namespace SectorLister
                 }
                 else
                 {
-                    int start = Decimal.ToInt32(updnStart.Value);
-                    int end = Decimal.ToInt32(updnEnd.Value);
                     int count = lstSystemNames.Items.Count;
                     progressBar.Maximum = count;
                     // loop through all sectors in the list
                     for (int j = 0; j < count; j++)
                     {
                         ListViewItem item = lstSystemNames.Items[j];
-                        for (int i = start; i <= end; i++)
+                        int end;
+                        switch (item.Tag)
+                        {
+                            case 'A': end = Decimal.ToInt32(updnCountA.Value); break;
+                            case 'B': end = Decimal.ToInt32(updnCountB.Value); break;
+                            case 'C': end = Decimal.ToInt32(updnCountC.Value); break;
+                            case 'D': end = Decimal.ToInt32(updnCountD.Value); break;
+                            case 'E': end = Decimal.ToInt32(updnCountE.Value); break;
+                            case 'F': end = Decimal.ToInt32(updnCountF.Value); break;
+                            case 'G': end = Decimal.ToInt32(updnCountG.Value); break;
+                            case 'H': end = Decimal.ToInt32(updnCountH.Value); break;
+                            default:
+                                continue;
+                        }
+                        for (int i = 0; i <= end; i++)
                         {
                             // write data
                             String line2 = item.Text + "-" + i.ToString();
@@ -99,6 +111,7 @@ namespace SectorLister
         private void chkIsolate_CheckedChanged(object sender, EventArgs e)
         {
             grpIsolate.Enabled = chkIsolate.Checked;
+            pnlCounts.Visible = chkIsolate.Checked;
         }
 
         private void updateIsolationList()
@@ -162,7 +175,8 @@ namespace SectorLister
             int x0 = x, y0 = y, z0 = z, code0 = code;
             int size = 1;
             int max = (int)Math.Pow(2, (int)'H' - ((int)code + 1));
-            while (code > 'A')  // ignore A cubes ... otherwise use >= 'A'
+            char stopCode = chkIncludeA.Checked ? 'A' : 'B';
+            while (code >= stopCode)
             {
                 max *= 2;
                 for (int z2 = -1; z2 < (size + 1); z2++)
@@ -242,7 +256,8 @@ namespace SectorLister
             if (d != 0)
                 s += d.ToString();
 
-            lstSystemNames.Items.Add(sTargetPrefix + " " + s);
+            ListViewItem item = lstSystemNames.Items.Add(sTargetPrefix + " " + s);
+            item.Tag = code;
         }
 
         private void txtSectorName_TextChanged(object sender, EventArgs e)
@@ -322,6 +337,15 @@ namespace SectorLister
             spTarget = FindPosition(a, b, c, d, nNum);
             sTargetPrefix = sPrefix;
             txtSectorName.BackColor = SystemColors.Window;
+        }
+
+        private void chkIncludeA_CheckedChanged(object sender, EventArgs e)
+        {
+            lblCountA.Enabled = chkIncludeA.Checked;
+            updnCountA.Enabled = chkIncludeA.Checked;
+            Application.DoEvents();
+
+            updateIsolationList();
         }
     }
 }
